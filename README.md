@@ -4,7 +4,7 @@ Software Engineering Course's Semester project using Java, SQL, XML and Apache N
 
 ## Project Summary
 
-Footbal Management App is an application for managing football teams. It has 4 users as Coach & Assistants, Nutrinionists, Physiotherapists and PLayers. It makes easier, for both players and the whole organization, to examine and analyzing training, formation, nutrition, physiotherapy and performace of players.
+Football Management App is an application for managing football teams. It has 4 users as Coach & Assistants, Nutrinionists, Physiotherapists and Players. It makes easier, for both players and the whole organization, to examine and analyzing training, formation, nutrition, physiotherapy and performace of players.
 
 
 ## Functionality
