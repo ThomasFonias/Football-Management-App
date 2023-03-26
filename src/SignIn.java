@@ -3,9 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+
+
 
 public class SignIn extends javax.swing.JFrame {
-
+    
+    Connection con;
+    ResultSet rs;
+    PreparedStatement pst;
     /**
      * Creates new form Home
      */
@@ -23,10 +37,11 @@ public class SignIn extends javax.swing.JFrame {
     private void initComponents() {
 
         username = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jComboBox1 = new javax.swing.JComboBox<>();
         page = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
+        signin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -36,10 +51,10 @@ public class SignIn extends javax.swing.JFrame {
         username.setBorder(null);
         getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 260, 30));
 
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(0, 153, 0));
-        jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 260, 30));
+        password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(0, 153, 0));
+        password.setBorder(null);
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 260, 30));
 
         jComboBox1.setBackground(new java.awt.Color(0, 153, 0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -50,11 +65,6 @@ public class SignIn extends javax.swing.JFrame {
 
         page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMSignin.png")); // NOI18N
         page.setText(" ");
-        page.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pageMouseClicked(evt);
-            }
-        });
         getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
 
         back.setText(" ");
@@ -65,6 +75,14 @@ public class SignIn extends javax.swing.JFrame {
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 20, 90, 30));
 
+        signin.setText("jLabel1");
+        signin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signinMouseClicked(evt);
+            }
+        });
+        getContentPane().add(signin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 200, 50));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -74,9 +92,104 @@ public class SignIn extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
 
-    private void pageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pageMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pageMouseClicked
+    private void signinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseClicked
+        String user = username.getText();
+        String pass = password.getText();
+        String type = (String) jComboBox1.getSelectedItem();
+        
+         try{
+         Class.forName("com.mysql.cj.jdbc.Driver");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/fm","root","");
+         
+        
+         if(jComboBox1.getSelectedItem().equals("Coach & Assistants"))
+         {
+             pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
+             pst.setString(1, user);
+             pst.setString(2, pass);
+             pst.setString(3, type);
+             rs = pst.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login as Coach & Assistants!");    
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username,password or type of user are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             username.setText("");
+             password.setText("");
+          }
+             
+         }
+         else if (jComboBox1.getSelectedItem().equals("Nutritionist"))
+         {
+             
+              pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
+             pst.setString(1, user);
+             pst.setString(2, pass);
+             pst.setString(3, type);
+             rs = pst.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login as Nutritionist!");    
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username,password or type of user are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             username.setText("");
+             password.setText("");
+          } 
+         }
+              else if (jComboBox1.getSelectedItem().equals("Physiotherapist"))
+         {
+             
+              pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
+             pst.setString(1, user);
+             pst.setString(2, pass);
+             pst.setString(3, type);
+             rs = pst.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login as Physiotherapist!");  
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username,password or type of user are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             username.setText("");
+             password.setText("");
+          }   
+         }
+               else if (jComboBox1.getSelectedItem().equals("Player"))
+         {
+             
+              pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
+             pst.setString(1, user);
+             pst.setString(2, pass);
+             pst.setString(3, type);
+             rs = pst.executeQuery();
+             
+             if (rs.next())
+          {
+             JOptionPane.showMessageDialog(this,"Successful Login as Player!");
+          }
+          else
+          {
+             JOptionPane.showMessageDialog(this,"Username,password or type of user are incorrect","Error",JOptionPane.ERROR_MESSAGE); 
+             username.setText("");
+             password.setText("");
+          } 
+         }
+         else
+         {
+            JOptionPane.showMessageDialog(this,"Type of user is blank! Select a valid type of user!","Error",JOptionPane.ERROR_MESSAGE); 
+         }
+        }catch (ClassNotFoundException | SQLException ex) {
+         Logger.getLogger(SignIn.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_signinMouseClicked
 
     /**
      * @param args the command line arguments
@@ -116,8 +229,9 @@ public class SignIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel back;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel page;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JLabel signin;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
