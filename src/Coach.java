@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-public class Home extends javax.swing.JFrame {
+public class Coach extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Home() {
+    public Coach() {
         initComponents();
     }
 
@@ -25,12 +25,12 @@ public class Home extends javax.swing.JFrame {
         page = new javax.swing.JLabel();
         home = new javax.swing.JLabel();
         signIn = new javax.swing.JLabel();
-        exit = new javax.swing.JLabel();
+        logout = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMHome.png")); // NOI18N
+        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMCoach&Assistants.png")); // NOI18N
         page.setText(" ");
         getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
 
@@ -50,13 +50,13 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(signIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 20, 100, 30));
 
-        exit.setText(" ");
-        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setText(" ");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitMouseClicked(evt);
+                logoutMouseClicked(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 20, 70, 30));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 20, 110, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -74,9 +74,9 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_signInMouseClicked
 
-    private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_exitMouseClicked
+    }//GEN-LAST:event_logoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -114,8 +114,8 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel exit;
     private javax.swing.JLabel home;
+    private javax.swing.JLabel logout;
     private javax.swing.JLabel page;
     private javax.swing.JLabel signIn;
     // End of variables declaration//GEN-END:variables

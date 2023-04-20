@@ -84,6 +84,7 @@ public class SignIn extends javax.swing.JFrame {
         getContentPane().add(signin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 200, 50));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
