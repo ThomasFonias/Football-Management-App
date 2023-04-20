@@ -114,6 +114,9 @@ public class SignIn extends javax.swing.JFrame {
              if (rs.next())
           {
              JOptionPane.showMessageDialog(this,"Successful Login as Coach & Assistants!");    
+                Coach a = new Coach();
+                a.setVisible(true);
+                this.dispose();
           }
           else
           {

@@ -22,33 +22,39 @@ public class Coach extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        page = new javax.swing.JLabel();
-        home = new javax.swing.JLabel();
-        signIn = new javax.swing.JLabel();
+        forms = new javax.swing.JLabel();
+        squad = new javax.swing.JLabel();
+        stats = new javax.swing.JLabel();
         logout = new javax.swing.JLabel();
+        training = new javax.swing.JLabel();
+        page = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMCoach&Assistants.png")); // NOI18N
-        page.setText(" ");
-        getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
-
-        home.setText(" ");
-        home.addMouseListener(new java.awt.event.MouseAdapter() {
+        forms.setText(" ");
+        forms.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeMouseClicked(evt);
+                formsMouseClicked(evt);
             }
         });
-        getContentPane().add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 20, 100, 30));
+        getContentPane().add(forms, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 250, 20));
 
-        signIn.setText(" ");
-        signIn.addMouseListener(new java.awt.event.MouseAdapter() {
+        squad.setText(" ");
+        squad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signInMouseClicked(evt);
+                squadMouseClicked(evt);
             }
         });
-        getContentPane().add(signIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 20, 100, 30));
+        getContentPane().add(squad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 100, 20));
+
+        stats.setText(" ");
+        stats.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                statsMouseClicked(evt);
+            }
+        });
+        getContentPane().add(stats, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 170, 20));
 
         logout.setText(" ");
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,25 +64,43 @@ public class Coach extends javax.swing.JFrame {
         });
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 20, 110, 30));
 
+        training.setText(" ");
+        training.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trainingMouseClicked(evt);
+            }
+        });
+        getContentPane().add(training, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 170, 30));
+
+        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMCoach&Assistants.png")); // NOI18N
+        page.setText(" ");
+        getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
+    private void formsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formsMouseClicked
+
+    }//GEN-LAST:event_formsMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         Home a = new Home();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_homeMouseClicked
-
-    private void signInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signInMouseClicked
-        SignIn a = new SignIn();
-        a.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_signInMouseClicked
-
-    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        System.exit(0);
     }//GEN-LAST:event_logoutMouseClicked
+
+    private void squadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_squadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_squadMouseClicked
+
+    private void trainingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trainingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trainingMouseClicked
+
+    private void statsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -114,9 +138,11 @@ public class Coach extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel home;
+    private javax.swing.JLabel forms;
     private javax.swing.JLabel logout;
     private javax.swing.JLabel page;
-    private javax.swing.JLabel signIn;
+    private javax.swing.JLabel squad;
+    private javax.swing.JLabel stats;
+    private javax.swing.JLabel training;
     // End of variables declaration//GEN-END:variables
 }
