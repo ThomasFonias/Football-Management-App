@@ -95,7 +95,9 @@ public class Coach extends javax.swing.JFrame {
     }//GEN-LAST:event_squadMouseClicked
 
     private void trainingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trainingMouseClicked
-        // TODO add your handling code here:
+       Coach_TrainingProgramms a =  new Coach_TrainingProgramms();
+       a.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_trainingMouseClicked
 
     private void statsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statsMouseClicked
