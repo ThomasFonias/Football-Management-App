@@ -93,7 +93,9 @@ public class Coach extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMouseClicked
 
     private void squadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_squadMouseClicked
-        // TODO add your handling code here:
+        Coach_Squad a = new Coach_Squad();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_squadMouseClicked
 
     private void trainingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trainingMouseClicked
@@ -103,7 +105,9 @@ public class Coach extends javax.swing.JFrame {
     }//GEN-LAST:event_trainingMouseClicked
 
     private void statsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statsMouseClicked
-        // TODO add your handling code here:
+       Coach_PlayerStats a =  new Coach_PlayerStats();
+       a.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_statsMouseClicked
 
     /**
