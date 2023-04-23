@@ -81,7 +81,9 @@ public class Coach extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formsMouseClicked
-
+      Coach_Formations a = new Coach_Formations();
+      a.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_formsMouseClicked
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
@@ -95,7 +97,7 @@ public class Coach extends javax.swing.JFrame {
     }//GEN-LAST:event_squadMouseClicked
 
     private void trainingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trainingMouseClicked
-       Coach_TrainingProgramms a =  new Coach_TrainingProgramms();
+       Coach_TrainingPrograms a =  new Coach_TrainingPrograms();
        a.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_trainingMouseClicked
