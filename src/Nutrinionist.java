@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-public class Coach_Formations extends javax.swing.JFrame {
+public class Nutrinionist extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Coach_Formations() {
+    public Nutrinionist() {
         initComponents();
     }
 
@@ -22,58 +22,59 @@ public class Coach_Formations extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nutrinionProgram = new javax.swing.JLabel();
+        nutrinionDashboard = new javax.swing.JLabel();
+        logout = new javax.swing.JLabel();
         page = new javax.swing.JLabel();
-        back = new javax.swing.JLabel();
-        jComboBox_Form = new javax.swing.JComboBox<>();
-        create = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
-        show = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FM-CA-Formations.png")); // NOI18N
+        nutrinionProgram.setText(" ");
+        nutrinionProgram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nutrinionProgramMouseClicked(evt);
+            }
+        });
+        getContentPane().add(nutrinionProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 170, 20));
+
+        nutrinionDashboard.setText(" ");
+        nutrinionDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nutrinionDashboardMouseClicked(evt);
+            }
+        });
+        getContentPane().add(nutrinionDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 220, 30));
+
+        logout.setText(" ");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 20, 110, 30));
+
+        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMNutritionists.png")); // NOI18N
         page.setText(" ");
         getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
-
-        back.setText(" ");
-        back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backMouseClicked(evt);
-            }
-        });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 90, 30));
-
-        jComboBox_Form.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4-3-3", "4-4-2", "4-3-1-2", "4-5-1", "3-5-2", "3-4-1-2", "3-4-2-1", "3-3-3-1", "3-3-2-2", "" }));
-        jComboBox_Form.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_FormActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox_Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 130, 40));
-
-        create.setText("jButton1");
-        getContentPane().add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, 120, 20));
-
-        edit.setText("jButton1");
-        getContentPane().add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 120, 20));
-
-        show.setText("jButton1");
-        getContentPane().add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 110, 20));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-        Coach a = new Coach();
+    private void nutrinionProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nutrinionProgramMouseClicked
+
+    }//GEN-LAST:event_nutrinionProgramMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        Home a = new Home();
         a.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backMouseClicked
+    }//GEN-LAST:event_logoutMouseClicked
 
-    private void jComboBox_FormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_FormActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_FormActionPerformed
+    private void nutrinionDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nutrinionDashboardMouseClicked
+
+    }//GEN-LAST:event_nutrinionDashboardMouseClicked
 
     /**
      * @param args the command line arguments
@@ -111,11 +112,9 @@ public class Coach_Formations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back;
-    private javax.swing.JButton create;
-    private javax.swing.JButton edit;
-    private javax.swing.JComboBox<String> jComboBox_Form;
+    private javax.swing.JLabel logout;
+    private javax.swing.JLabel nutrinionDashboard;
+    private javax.swing.JLabel nutrinionProgram;
     private javax.swing.JLabel page;
-    private javax.swing.JButton show;
     // End of variables declaration//GEN-END:variables
 }

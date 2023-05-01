@@ -38,7 +38,7 @@ public class SignIn extends javax.swing.JFrame {
 
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox_Type = new javax.swing.JComboBox<>();
         page = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
         signin = new javax.swing.JLabel();
@@ -56,12 +56,12 @@ public class SignIn extends javax.swing.JFrame {
         password.setBorder(null);
         getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 260, 30));
 
-        jComboBox1.setBackground(new java.awt.Color(0, 153, 0));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coach & Assistants", "Nutritionist", "Physiotherapist", "Player" }));
-        jComboBox1.setBorder(null);
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 330, 290, 50));
+        jComboBox_Type.setBackground(new java.awt.Color(0, 153, 0));
+        jComboBox_Type.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox_Type.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coach & Assistants", "Nutritionist", "Physiotherapist", "Player" }));
+        jComboBox_Type.setBorder(null);
+        getContentPane().add(jComboBox_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 330, 290, 50));
 
         page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMSignin.png")); // NOI18N
         page.setText(" ");
@@ -96,14 +96,14 @@ public class SignIn extends javax.swing.JFrame {
     private void signinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseClicked
         String user = username.getText();
         String pass = password.getText();
-        String type = (String) jComboBox1.getSelectedItem();
+        String type = (String) jComboBox_Type.getSelectedItem();
         
          try{
          Class.forName("com.mysql.cj.jdbc.Driver");
          con=DriverManager.getConnection("jdbc:mysql://localhost/fm","root","");
          
         
-         if(jComboBox1.getSelectedItem().equals("Coach & Assistants"))
+         if(jComboBox_Type.getSelectedItem().equals("Coach & Assistants"))
          {
              pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
              pst.setString(1, user);
@@ -126,7 +126,7 @@ public class SignIn extends javax.swing.JFrame {
           }
              
          }
-         else if (jComboBox1.getSelectedItem().equals("Nutritionist"))
+         else if (jComboBox_Type.getSelectedItem().equals("Nutritionist"))
          {
              
               pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
@@ -137,7 +137,10 @@ public class SignIn extends javax.swing.JFrame {
              
              if (rs.next())
           {
-             JOptionPane.showMessageDialog(this,"Successful Login as Nutritionist!");    
+             JOptionPane.showMessageDialog(this,"Successful Login as Nutritionist!"); 
+             Nutrinionist a = new Nutrinionist();
+             a.setVisible(true);
+             this.dispose();
           }
           else
           {
@@ -146,7 +149,7 @@ public class SignIn extends javax.swing.JFrame {
              password.setText("");
           } 
          }
-              else if (jComboBox1.getSelectedItem().equals("Physiotherapist"))
+              else if (jComboBox_Type.getSelectedItem().equals("Physiotherapist"))
          {
              
               pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
@@ -166,7 +169,7 @@ public class SignIn extends javax.swing.JFrame {
              password.setText("");
           }   
          }
-               else if (jComboBox1.getSelectedItem().equals("Player"))
+               else if (jComboBox_Type.getSelectedItem().equals("Player"))
          {
              
               pst=con.prepareStatement("select * from users where username=? and password=? and userType=? ");
@@ -232,7 +235,7 @@ public class SignIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel back;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox_Type;
     private javax.swing.JLabel page;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel signin;
