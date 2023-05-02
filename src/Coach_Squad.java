@@ -52,6 +52,11 @@ public class Coach_Squad extends javax.swing.JFrame {
         getContentPane().add(createPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, 120, 20));
 
         selectPlayer.setText("jButton1");
+        selectPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectPlayerMouseClicked(evt);
+            }
+        });
         getContentPane().add(selectPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 110, 20));
 
         comparePlayers.setText("jButton1");
@@ -69,6 +74,12 @@ public class Coach_Squad extends javax.swing.JFrame {
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
+
+    private void selectPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectPlayerMouseClicked
+        Coach_PlayerStats a = new Coach_PlayerStats();
+        a.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_selectPlayerMouseClicked
 
     /**
      * @param args the command line arguments

@@ -27,6 +27,7 @@ public class Coach extends javax.swing.JFrame {
         stats = new javax.swing.JLabel();
         logout = new javax.swing.JLabel();
         training = new javax.swing.JLabel();
+        feedback = new javax.swing.JLabel();
         page = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,6 +73,14 @@ public class Coach extends javax.swing.JFrame {
         });
         getContentPane().add(training, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 170, 30));
 
+        feedback.setText(" ");
+        feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                feedbackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(feedback, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 130, 30));
+
         page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FMCoach&Assistants.png")); // NOI18N
         page.setText(" ");
         getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
@@ -105,10 +114,16 @@ public class Coach extends javax.swing.JFrame {
     }//GEN-LAST:event_trainingMouseClicked
 
     private void statsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statsMouseClicked
-       Coach_PlayerStats a =  new Coach_PlayerStats();
+       Coach_InsertData a =  new Coach_InsertData();
        a.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_statsMouseClicked
+
+    private void feedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_feedbackMouseClicked
+       Coach_PlayerFeedback a =  new Coach_PlayerFeedback();
+       a.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_feedbackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -146,6 +161,7 @@ public class Coach extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel feedback;
     private javax.swing.JLabel forms;
     private javax.swing.JLabel logout;
     private javax.swing.JLabel page;

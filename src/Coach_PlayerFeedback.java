@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-public class Coach_PlayerStats extends javax.swing.JFrame {
+public class Coach_PlayerFeedback extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Coach_PlayerStats() {
+    public Coach_PlayerFeedback() {
         initComponents();
     }
 
@@ -24,16 +24,14 @@ public class Coach_PlayerStats extends javax.swing.JFrame {
 
         page = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
+        jComboBox_Plan = new javax.swing.JComboBox<>();
+        feedback = new javax.swing.JButton();
         jComboBox_Player = new javax.swing.JComboBox<>();
-        create = new javax.swing.JButton();
-        compare = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
-        show = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FM-CA-Player Statistics.png")); // NOI18N
+        page.setIcon(new javax.swing.ImageIcon("C:\\Users\\giann\\Downloads\\Mockups-FM\\Mockups\\FM-CA-Feedback.png")); // NOI18N
         page.setText(" ");
         getContentPane().add(page, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 570));
 
@@ -45,35 +43,38 @@ public class Coach_PlayerStats extends javax.swing.JFrame {
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 90, 30));
 
+        jComboBox_Plan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plan 1", "Plan 2", "Plan 3", "Plan 4" }));
+        jComboBox_Plan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_PlanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox_Plan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 140, 30));
+
+        feedback.setText("jButton1");
+        getContentPane().add(feedback, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 120, 20));
+
         jComboBox_Player.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nikolas", "Giorgos", "Giannis", "Kostas", "Mixalis", "Angelo", "Alexios", "Shasha", "Mike Jr", "Jordan", "Stelios" }));
         jComboBox_Player.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_PlayerActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 130, 30));
-
-        create.setText("jButton1");
-        getContentPane().add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 100, 20));
-
-        compare.setText("jButton1");
-        getContentPane().add(compare, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, 100, 20));
-
-        edit.setText("jButton1");
-        getContentPane().add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 100, 20));
-
-        show.setText("jButton1");
-        getContentPane().add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 100, 20));
+        getContentPane().add(jComboBox_Player, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 180, 30));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-        Coach_Squad a = new Coach_Squad();
+        Coach a = new Coach();
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
+
+    private void jComboBox_PlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_PlanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_PlanActionPerformed
 
     private void jComboBox_PlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_PlayerActionPerformed
         // TODO add your handling code here:
@@ -116,11 +117,9 @@ public class Coach_PlayerStats extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel back;
-    private javax.swing.JButton compare;
-    private javax.swing.JButton create;
-    private javax.swing.JButton edit;
+    private javax.swing.JButton feedback;
+    private javax.swing.JComboBox<String> jComboBox_Plan;
     private javax.swing.JComboBox<String> jComboBox_Player;
     private javax.swing.JLabel page;
-    private javax.swing.JButton show;
     // End of variables declaration//GEN-END:variables
 }
