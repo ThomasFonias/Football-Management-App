@@ -75,7 +75,9 @@ public class Nutrinionist extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMouseClicked
 
     private void nutrinionDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nutrinionDashboardMouseClicked
-
+        Nutrinionist_NutritionDashboard a = new Nutrinionist_NutritionDashboard();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_nutrinionDashboardMouseClicked
 
     /**
