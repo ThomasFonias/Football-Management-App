@@ -36,7 +36,7 @@ public class Nutrinionist extends javax.swing.JFrame {
                 nutrinionProgramMouseClicked(evt);
             }
         });
-        getContentPane().add(nutrinionProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 170, 20));
+        getContentPane().add(nutrinionProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 160, 20));
 
         nutrinionDashboard.setText(" ");
         nutrinionDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,7 +63,9 @@ public class Nutrinionist extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nutrinionProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nutrinionProgramMouseClicked
-
+        Nutrinionist_NutritionProgram a = new Nutrinionist_NutritionProgram();
+        a.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_nutrinionProgramMouseClicked
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
