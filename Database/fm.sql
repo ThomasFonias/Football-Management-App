@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2023 at 05:11 PM
+-- Generation Time: May 03, 2023 at 11:12 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -107,6 +107,45 @@ INSERT INTO `match_data` (`id`, `against_team`, `ball_pocession`, `attempts`, `a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `nutritionist`
+--
+
+CREATE TABLE `nutritionist` (
+  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL,
+  `experience_years` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `nutritionist`
+--
+
+INSERT INTO `nutritionist` (`username`, `name`, `surname`, `age`, `experience_years`) VALUES
+('testNutr', 'Test', 'Nutrinionist', 36, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nutrition_programm`
+--
+
+CREATE TABLE `nutrition_programm` (
+  `nutritionist` varchar(255) NOT NULL,
+  `startDate` date NOT NULL,
+  `endDate` date NOT NULL,
+  `player` varchar(255) NOT NULL,
+  `monday_menu` varchar(255) NOT NULL,
+  `tuesday_menu` varchar(255) NOT NULL,
+  `wednesday_menu` varchar(255) NOT NULL,
+  `thursday_menu` varchar(255) NOT NULL,
+  `friday_menu` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `training_exerxises`
 --
 
@@ -194,6 +233,18 @@ ALTER TABLE `match_data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `nutritionist`
+--
+ALTER TABLE `nutritionist`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `nutrition_programm`
+--
+ALTER TABLE `nutrition_programm`
+  ADD PRIMARY KEY (`nutritionist`);
+
+--
 -- Indexes for table `training_exerxises`
 --
 ALTER TABLE `training_exerxises`
@@ -245,6 +296,18 @@ ALTER TABLE `coach`
 ALTER TABLE `coach_training_evaluation`
   ADD CONSTRAINT `coach_name` FOREIGN KEY (`coach`) REFERENCES `coach` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `exercise_name` FOREIGN KEY (`exercise`) REFERENCES `training_exerxises` (`name`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `nutritionist`
+--
+ALTER TABLE `nutritionist`
+  ADD CONSTRAINT `nutrinionist_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `nutrition_programm`
+--
+ALTER TABLE `nutrition_programm`
+  ADD CONSTRAINT `nutritionist` FOREIGN KEY (`nutritionist`) REFERENCES `nutritionist` (`username`);
 
 --
 -- Constraints for table `training_plan`
