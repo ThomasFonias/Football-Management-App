@@ -27,8 +27,8 @@ public class Nutrinionist_NutritionProgram extends javax.swing.JFrame {
         jComboBox_Player = new javax.swing.JComboBox<>();
         create = new javax.swing.JButton();
         edit = new javax.swing.JButton();
-        jComboBox_Player1 = new javax.swing.JComboBox<>();
-        jComboBox_Player2 = new javax.swing.JComboBox<>();
+        jComboBox_EndDate = new javax.swing.JComboBox<>();
+        jComboBox_FromDate = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,21 +64,21 @@ public class Nutrinionist_NutritionProgram extends javax.swing.JFrame {
         edit.setText("jButton1");
         getContentPane().add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, 100, 20));
 
-        jComboBox_Player1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5/3/23", "6/3/23", "7/3/23", "8/3/23" }));
-        jComboBox_Player1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_EndDate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5/3/23", "6/3/23", "7/3/23", "8/3/23" }));
+        jComboBox_EndDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_Player1ActionPerformed(evt);
+                jComboBox_EndDateActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 130, 30));
+        getContentPane().add(jComboBox_EndDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 130, 30));
 
-        jComboBox_Player2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1/3/23", "2/3/23", "3/3/23", "4/3/23" }));
-        jComboBox_Player2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_FromDate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1/3/23", "2/3/23", "3/3/23", "4/3/23" }));
+        jComboBox_FromDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_Player2ActionPerformed(evt);
+                jComboBox_FromDateActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 130, 30));
+        getContentPane().add(jComboBox_FromDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 130, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -94,13 +94,13 @@ public class Nutrinionist_NutritionProgram extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox_PlayerActionPerformed
 
-    private void jComboBox_Player1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_Player1ActionPerformed
+    private void jComboBox_EndDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_EndDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_Player1ActionPerformed
+    }//GEN-LAST:event_jComboBox_EndDateActionPerformed
 
-    private void jComboBox_Player2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_Player2ActionPerformed
+    private void jComboBox_FromDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_FromDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_Player2ActionPerformed
+    }//GEN-LAST:event_jComboBox_FromDateActionPerformed
 
     private void createMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createMouseClicked
         Nutrinionist_CreateProgram a = new Nutrinionist_CreateProgram();
@@ -147,9 +147,9 @@ public class Nutrinionist_NutritionProgram extends javax.swing.JFrame {
     private javax.swing.JLabel back;
     private javax.swing.JButton create;
     private javax.swing.JButton edit;
+    private javax.swing.JComboBox<String> jComboBox_EndDate;
+    private javax.swing.JComboBox<String> jComboBox_FromDate;
     private javax.swing.JComboBox<String> jComboBox_Player;
-    private javax.swing.JComboBox<String> jComboBox_Player1;
-    private javax.swing.JComboBox<String> jComboBox_Player2;
     private javax.swing.JLabel page;
     // End of variables declaration//GEN-END:variables
 }

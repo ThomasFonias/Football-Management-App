@@ -161,6 +161,9 @@ public class SignIn extends javax.swing.JFrame {
              if (rs.next())
           {
              JOptionPane.showMessageDialog(this,"Successful Login as Physiotherapist!");  
+             Physiotherapist a = new Physiotherapist();
+             a.setVisible(true);
+             this.dispose();
           }
           else
           {
