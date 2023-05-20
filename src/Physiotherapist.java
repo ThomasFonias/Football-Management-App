@@ -102,7 +102,7 @@ public class Physiotherapist extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMouseClicked
 
     private void injuryExMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_injuryExMouseClicked
-        Nutrinionist_NutritionDashboard a = new Nutrinionist_NutritionDashboard();
+        Physiotherapist_InjuryEx a = new Physiotherapist_InjuryEx();
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_injuryExMouseClicked
