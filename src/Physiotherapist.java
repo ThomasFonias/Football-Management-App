@@ -50,19 +50,9 @@ public class Physiotherapist extends javax.swing.JFrame {
         getContentPane().add(injuryEx, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 310, 30));
 
         injuryDashboard.setText(" ");
-        injuryDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                injuryDashboardMouseClicked(evt);
-            }
-        });
         getContentPane().add(injuryDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, 220, 30));
 
         trackProgress.setText(" ");
-        trackProgress.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                trackProgressMouseClicked(evt);
-            }
-        });
         getContentPane().add(trackProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 180, 30));
 
         videoLibray.setText(" ");
@@ -107,17 +97,10 @@ public class Physiotherapist extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_injuryExMouseClicked
 
-    private void injuryDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_injuryDashboardMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_injuryDashboardMouseClicked
-
     private void videoLibrayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_videoLibrayMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_videoLibrayMouseClicked
-
-    private void trackProgressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trackProgressMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_trackProgressMouseClicked
+        Physiotherapist_VideoLibrary a = new Physiotherapist_VideoLibrary();
+        a.setVisible(true);
+        this.dispose();    }//GEN-LAST:event_videoLibrayMouseClicked
 
     /**
      * @param args the command line arguments
