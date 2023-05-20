@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2023 at 11:12 PM
+-- Generation Time: May 20, 2023 at 05:38 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -146,6 +146,66 @@ CREATE TABLE `nutrition_programm` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `physiotherapist`
+--
+
+CREATE TABLE `physiotherapist` (
+  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL,
+  `experience_years` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `physiotherapist`
+--
+
+INSERT INTO `physiotherapist` (`username`, `name`, `surname`, `age`, `experience_years`) VALUES
+('testPhysio', 'Test', 'Physio', 34, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `physiotherapist_exercises`
+--
+
+CREATE TABLE `physiotherapist_exercises` (
+  `name` varchar(255) NOT NULL,
+  `type` enum('Strength','Injury') NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `physiotherapist_exercises`
+--
+
+INSERT INTO `physiotherapist_exercises` (`name`, `type`, `description`) VALUES
+('Exercise 1', 'Strength', 'Bicep: 3 x 15x 20Kg'),
+('Exercise 2', 'Injury', 'Bike: 40 min');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `physiotherapist_video`
+--
+
+CREATE TABLE `physiotherapist_video` (
+  `physiotherapist` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `physiotherapist_video`
+--
+
+INSERT INTO `physiotherapist_video` (`physiotherapist`, `video`, `date`) VALUES
+('testPhysio', 'ex1.mp4', '2023-05-20 18:36:04');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `training_exerxises`
 --
 
@@ -245,6 +305,25 @@ ALTER TABLE `nutrition_programm`
   ADD PRIMARY KEY (`nutritionist`);
 
 --
+-- Indexes for table `physiotherapist`
+--
+ALTER TABLE `physiotherapist`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `physiotherapist_exercises`
+--
+ALTER TABLE `physiotherapist_exercises`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Indexes for table `physiotherapist_video`
+--
+ALTER TABLE `physiotherapist_video`
+  ADD PRIMARY KEY (`video`),
+  ADD KEY `username` (`physiotherapist`);
+
+--
 -- Indexes for table `training_exerxises`
 --
 ALTER TABLE `training_exerxises`
@@ -308,6 +387,18 @@ ALTER TABLE `nutritionist`
 --
 ALTER TABLE `nutrition_programm`
   ADD CONSTRAINT `nutritionist` FOREIGN KEY (`nutritionist`) REFERENCES `nutritionist` (`username`);
+
+--
+-- Constraints for table `physiotherapist`
+--
+ALTER TABLE `physiotherapist`
+  ADD CONSTRAINT `physiotherapist_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `physiotherapist_video`
+--
+ALTER TABLE `physiotherapist_video`
+  ADD CONSTRAINT `username` FOREIGN KEY (`physiotherapist`) REFERENCES `physiotherapist` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `training_plan`
