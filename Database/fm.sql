@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2023 at 05:38 PM
+-- Generation Time: May 21, 2023 at 10:15 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -206,6 +206,50 @@ INSERT INTO `physiotherapist_video` (`physiotherapist`, `video`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `players`
+--
+
+CREATE TABLE `players` (
+  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL,
+  `experience_years` int(10) NOT NULL,
+  `country` enum('GR','UK','IT','ES','FR','DE','ND') NOT NULL,
+  `foot` enum('Right','Left') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `players`
+--
+
+INSERT INTO `players` (`username`, `name`, `surname`, `age`, `experience_years`, `country`, `foot`) VALUES
+('nikolas', 'Nikolas', 'Papadopoulos', 23, 6, 'GR', 'Right');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `players_feedback`
+--
+
+CREATE TABLE `players_feedback` (
+  `id` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `role` enum('Coach & Assistants','Nutritionist','Physiotherapist') NOT NULL,
+  `month` enum('March','April','May','June','July','August','September','October','November','December','January','February') NOT NULL,
+  `evaluation` enum('1 Star','2 Stars','3 Stars','4 Stars','5 Stars') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `players_feedback`
+--
+
+INSERT INTO `players_feedback` (`id`, `username`, `role`, `month`, `evaluation`) VALUES
+(1, 'nikolas', 'Coach & Assistants', 'March', '4 Stars');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `training_exerxises`
 --
 
@@ -324,6 +368,19 @@ ALTER TABLE `physiotherapist_video`
   ADD KEY `username` (`physiotherapist`);
 
 --
+-- Indexes for table `players`
+--
+ALTER TABLE `players`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `players_feedback`
+--
+ALTER TABLE `players_feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `player` (`username`);
+
+--
 -- Indexes for table `training_exerxises`
 --
 ALTER TABLE `training_exerxises`
@@ -357,6 +414,12 @@ ALTER TABLE `coach_training_evaluation`
 -- AUTO_INCREMENT for table `match_data`
 --
 ALTER TABLE `match_data`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `players_feedback`
+--
+ALTER TABLE `players_feedback`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -399,6 +462,18 @@ ALTER TABLE `physiotherapist`
 --
 ALTER TABLE `physiotherapist_video`
   ADD CONSTRAINT `username` FOREIGN KEY (`physiotherapist`) REFERENCES `physiotherapist` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `players`
+--
+ALTER TABLE `players`
+  ADD CONSTRAINT `player_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `players_feedback`
+--
+ALTER TABLE `players_feedback`
+  ADD CONSTRAINT `player` FOREIGN KEY (`username`) REFERENCES `players` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `training_plan`
