@@ -184,6 +184,9 @@ public class SignIn extends javax.swing.JFrame {
              if (rs.next())
           {
              JOptionPane.showMessageDialog(this,"Successful Login as Player!");
+             Player a = new Player();
+             a.setVisible(true);
+             this.dispose();
           }
           else
           {
