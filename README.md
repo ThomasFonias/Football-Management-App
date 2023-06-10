@@ -18,5 +18,6 @@ Football Management App is an application for managing football teams. It has 4 
 
 ## Code Frequency
 
-![image](https://github.com/ThomasKarz/Football-Management-App/assets/126973125/054762d5-c606-4f79-9cca-e886ed24425f)
+![image](https://github.com/ThomasKarz/Football-Management-App/assets/104621152/e688d6a7-a157-4fec-94fb-6bc6ef1bcc0b)
+
 
